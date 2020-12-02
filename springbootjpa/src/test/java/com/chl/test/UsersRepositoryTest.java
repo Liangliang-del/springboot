@@ -13,6 +13,9 @@ import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -85,5 +88,12 @@ public class UsersRepositoryTest {
     @Rollback(false)
     public void testUpdateNameById(){
         this.usersRepositoryQueryAnnotation.updateUsersNameById("Shanxuetan", 1);
+    }
+
+    @Test
+    public void testDateFormat() throws ParseException {
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+        Date time = format.parse("2020-12-02 10:19:12.2222222");
+        System.out.println(time);
     }
 }
