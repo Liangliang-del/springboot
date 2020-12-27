@@ -93,7 +93,7 @@ public class UsersRepositoryTest {
     @Test
     public void testDateFormat() throws ParseException {
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm");
-        Date time = format.parse("2020-12-02 10:19:12.2222222");
+        Date time = format.parse("2020-12-02 10:19:12.2222211");
         System.out.println(time);
     }
 }
